@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MasterPolApp.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="650" d:DesignWidth="1000"
       Title="AddEditPage">
 
     <Grid>
@@ -21,13 +21,13 @@
                      VerticalContentAlignment="Center"></TextBox>
             <Label Content="Тип партнера:" FontSize="24"></Label>
             <ComboBox x:Name="TypePartnerComboBox" HorizontalContentAlignment="Center"
-                      VerticalContentAlignment="Center"></ComboBox>
+                      VerticalContentAlignment="Center" DisplayMemberPath="Type"></ComboBox>
             <Label Content="Рейтинг:" FontSize="24"></Label>
             <TextBox x:Name="RatingTextBox" HorizontalContentAlignment="Center"
                      VerticalContentAlignment="Center"></TextBox>
             <Label Content="Индекс:" FontSize="24"></Label>
             <TextBox x:Name="IndexTextBox" HorizontalContentAlignment="Center"
-                     VerticalContentAlignment="Center"></TextBox>
+                     VerticalContentAlignment="Center" MaxLength="6"></TextBox>
             <Label Content="Область:" FontSize="24"></Label>
             <TextBox x:Name="AreaTextBox" HorizontalContentAlignment="Center"
                      VerticalContentAlignment="Center"></TextBox>
@@ -36,7 +36,7 @@
                      VerticalContentAlignment="Center"></TextBox>
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Center"
-                    HorizontalAlignment="Center" Margin="0,0,0,70">
+                    HorizontalAlignment="Center">
             <Label Content="Улица:" FontSize="24"></Label>
             <TextBox x:Name="StreetTextBox" HorizontalContentAlignment="Center"
                      VerticalContentAlignment="Center"></TextBox>
@@ -52,11 +52,10 @@
             <Label Content="Почта:" FontSize="24"></Label>
             <TextBox x:Name="MailTextBox" HorizontalContentAlignment="Center"
                      VerticalContentAlignment="Center"></TextBox>
+
+            <Button x:Name="BackButton" Click="BackButton_Click" Content="Назад" Grid.Column="1" Margin="10"></Button>
+            <Button x:Name="SaveButton" Click="SaveButton_Click" Content="Сохранить" Grid.Column="1"></Button>
         </StackPanel>
-        <Button x:Name="BackButton" Click="BackButton_Click" Content="Назад" Grid.Column="1"
-                VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                Margin="110,0,0,8" Width="80"></Button>
-        <Button x:Name="SaveButton" Click="SaveButton_Click" Content="Сохранить" Grid.Column="1"
-                VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,110,7" Width="80"></Button>
+        
     </Grid>
 </Page>

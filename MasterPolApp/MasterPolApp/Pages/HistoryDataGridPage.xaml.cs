@@ -28,7 +28,7 @@ namespace MasterPolApp.Pages
         private void LoadSalesHistory(int partnerId)
         {
             SalesDataGrid.ItemsSource = Data.DatabaseMasterPolEntities.GetContext().PartnerProductImport.
-                Where(d => d.IdNamePartner == partnerId);
+                Where(d => d.IdNamePartner == partnerId).ToList();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
