@@ -77,6 +77,7 @@
     <Property Name="IdAddress" Type="Int32" Nullable="false" />
     <Property Name="INN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Rating" Type="Int32" Nullable="false" />
+    <Property Name="Discount" Type="Int32" />
     <NavigationProperty Name="Address" Relationship="Self.FK_PartnerImport_Address" FromRole="PartnerImport" ToRole="Address" />
     <NavigationProperty Name="NameDirector" Relationship="Self.FK_PartnerImport_NameDirector" FromRole="PartnerImport" ToRole="NameDirector" />
     <NavigationProperty Name="TypePartner" Relationship="Self.FK_PartnerImport_TypePartner" FromRole="PartnerImport" ToRole="TypePartner" />
@@ -114,16 +115,6 @@
     <Property Name="TypeProduct" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="KoefTypeProduct" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="ProductImport" Relationship="Self.FK_ProductImport_ProductTypeImport" FromRole="ProductTypeImport" ToRole="ProductImport" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="TypePartner">
     <Key>
@@ -296,7 +287,6 @@
     <EntitySet Name="PartnerProductImport" EntityType="Self.PartnerProductImport" />
     <EntitySet Name="ProductImport" EntityType="Self.ProductImport" />
     <EntitySet Name="ProductTypeImport" EntityType="Self.ProductTypeImport" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="TypePartner" EntityType="Self.TypePartner" />
     <EntitySet Name="UserRole" EntityType="Self.UserRole" />
     <EntitySet Name="Users" EntityType="Self.Users" />

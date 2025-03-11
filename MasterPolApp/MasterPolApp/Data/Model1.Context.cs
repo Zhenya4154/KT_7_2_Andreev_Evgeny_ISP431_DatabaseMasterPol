@@ -23,13 +23,13 @@ namespace MasterPolApp.Data
 
         public static DatabaseMasterPolEntities GetContext()
         {
-            if(_context == null)
+            if (_context == null)
             {
                 _context = new DatabaseMasterPolEntities();
             }
             return _context;
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -46,7 +46,6 @@ namespace MasterPolApp.Data
         public virtual DbSet<PartnerProductImport> PartnerProductImport { get; set; }
         public virtual DbSet<ProductImport> ProductImport { get; set; }
         public virtual DbSet<ProductTypeImport> ProductTypeImport { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TypePartner> TypePartner { get; set; }
         public virtual DbSet<UserRole> UserRole { get; set; }
         public virtual DbSet<Users> Users { get; set; }

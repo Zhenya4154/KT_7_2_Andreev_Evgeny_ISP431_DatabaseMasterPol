@@ -47,18 +47,23 @@ namespace MasterPolApp.Pages
                 && d.UserPassword == PasswordTextBox.Password))
                 {
                     MessageBox.Show("Успех!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Classes.Manager.MainFrame.Navigate(new Pages.PartnerListViewPage());
+                }
+                else
+                {
+                    MessageBox.Show("Неверный логин или пароль!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch
             {
-
+               
             }
 
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-       
+            Application.Current.Shutdown();
         }
     }
 }
